@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Second Life, Shared Earth | HumaniCraft Group 6</title>
+
+<style>
+:root {
+    --forest: #234b38;
+    --green: #39734e;
+    --lime: #dce9b6;
+    --cream: #f7f7f2;
+    --ink: #24352b;
+    --muted: #66736a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+header {
+    background: var(--forest);
+    color: white;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--lime);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--lime);
+}
+
+.hero {
+    background: #315e43;
+    color: white;
+    padding: 65px 22px;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.eyebrow,
+.section-tag {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--lime);
+}
+
+h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.05;
+    margin: 15px 0 20px;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #e8eee8;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--lime);
+    color: var(--forest);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 11px 18px;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+.hero-art {
+    background: #e2ebc3;
+    color: var(--forest);
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-art .big {
+    font-size: 75px;
+}
+
+.hero-art h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+
+.hero-art p {
+    color: #425c47;
+    font-size: 15px;
+}
+
+section {
+    padding: 65px 22px;
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-tag {
+    color: var(--green);
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    margin: 12px 0 20px;
+}
+
+h3 {
+    line-height: 1.3;
+}
+
+.lead {
+    max-width: 850px;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border: 1px solid #e0e5dc;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: var(--forest);
+    margin: 10px 0;
+}
+
+.emoji {
+    font-size: 35px;
+}
+
+.dark {
+    background: var(--forest);
+    color: white;
+}
+
+.dark .section-tag {
+    color: var(--lime);
+}
+
+.dark .lead {
+    color: #dce6dd;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.quote {
+    font-size: 23px;
+    font-weight: bold;
+    border-left: 4px solid var(--lime);
+    padding: 18px 22px;
+    background: #ffffff10;
+}
+
+.steps {
+    display: grid;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    background: white;
+    padding: 17px;
+    border-radius: 8px;
+    color: var(--ink);
+}
+
+.num {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    background: var(--lime);
+    color: var(--forest);
+    border-radius: 50%;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+}
+
+.step h3 {
+    margin: 0 0 5px;
+}
+
+.step p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.upcycle {
+    background: #edf1e5;
+}
+
+.idea {
+    background: white;
+    border: 1px solid #dce4d7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.idea .top {
+    background: #dce9b6;
+    padding: 20px;
+    font-size: 40px;
+}
+
+.idea .body {
+    padding: 20px;
+}
+
+.idea h3 {
+    margin-top: 0;
+}
+
+.callout {
+    background: #e7eddf;
+    padding: 18px 20px;
+    border-left: 4px solid var(--green);
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+.reflection {
+    background: white;
+    border: 1px solid #e0e5dc;
+    padding: 22px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.reflection h3 {
+    color: var(--green);
+    margin-top: 0;
+}
+
+.sources li {
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.sources a {
+    color: var(--green);
+}
+
+.cta {
+    background: var(--lime);
+    text-align: center;
+    color: var(--forest);
+    padding: 50px 22px;
+}
+
+.cta h2 {
+    max-width: 800px;
+    margin: 12px auto;
+}
+
+.cta p {
+    max-width: 750px;
+    margin: auto;
+}
+
+footer {
+    background: #183528;
+    color: #d5e0d6;
+    padding: 30px 22px;
+    font-size: 14px;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.member {
+    background: #ffffff12;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .hero-inner,
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    .members {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        padding: 48px 18px;
+    }
+
+    .hero {
+        padding: 50px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">HUMANICRAFT 🌱 GROUP 6</div>
+
+        <nav>
+            <a href="#issue">The Issue</a>
+            <a href="#analysis">Research</a>
+            <a href="#reflection">Faith and Values</a>
+            <a href="#action">Upcycling</a>
+            <a href="#sources">Sources</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="eyebrow">Ecological Solidarity through Upcycling</div>
+
+            <h1>Behind every recycled material is a person.</h1>
+
+            <p>
+                Waste pickers play an important role in keeping recyclable materials
+                from ending up in dumps, streets, and waterways. Yet their work is
+                often overlooked. In Barangay 105, Tondo, Manila, ecological
+                solidarity means recognizing their contributions, understanding
+                their struggles, and supporting a cleaner environment for everyone.
+            </p>
+
+            <a class="btn" href="#issue">Learn about their work</a>
+        </div>
+
+        <div class="hero-art">
+            <div class="big">♻️</div>
+            <h2>They help give waste a second life.</h2>
+            <p>Recognize their work. Respect their dignity. Support their livelihood.</p>
+        </div>
+    </div>
+</section>
+
+<section id="issue">
+    <div class="wrap">
+
+        <div class="section-tag">01 · Masid-Danas</div>
+
+        <h2>The people behind waste recovery</h2>
+
+        <p class="lead">
+            Waste pickers and informal recyclers collect and sort materials that
+            can still be reused or sold. Their work contributes to recycling and
+            helps reduce the amount of waste left in the environment. In communities
+            such as Barangay 105, Tondo, these workers are part of the local waste
+            economy, but their working conditions and contributions deserve more attention.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="emoji">♻️</div>
+                <h3>Helping the environment</h3>
+                <p>
+                    Waste pickers recover materials such as bottles, plastics,
+                    cardboard, and metals. By sorting and collecting reusable
+                    materials, they help keep valuable resources in circulation
+                    instead of allowing them to become waste.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🧤</div>
+                <h3>Challenging working conditions</h3>
+                <p>
+                    Informal waste workers may work in difficult surroundings
+                    and face exposure to dirty materials, unsafe spaces,
+                    and limited access to proper equipment or protection.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🤝</div>
+                <h3>Often overlooked</h3>
+                <p>
+                    Their contribution to recycling is important, but informal
+                    workers may lack recognition, stable income, and support.
+                    Environmental programs should consider their needs and voices.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="callout">
+            Waste pickers are not the cause of society's waste problem.
+            They contribute to recovering materials and deserve dignity,
+            respect, and fair treatment.
+        </div>
+
+    </div>
+</section>
+
+<section class="dark" id="analysis">
+    <div class="wrap two-col">
+
+        <div>
+            <div class="section-tag">02 · Suri-Nilay · Social Analysis</div>
+
+            <h2>Why are waste workers vulnerable?</h2>
+
+            <p class="lead">
+                Their struggles are connected to poverty, limited opportunities,
+                informal employment, environmental conditions, and gaps in waste
+                management systems.
+            </p>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="num">1</div>
+                    <div>
+                        <h3>Unstable livelihood</h3>
+                        <p>
+                            Income may depend on the quantity and value of materials
+                            collected, making it difficult to maintain financial stability.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="num">2</div>
+                    <div>
+                        <h3>Health and safety concerns</h3>
+                        <p>
+                            Working around discarded materials and polluted areas
+                            can expose workers to risks, especially when protective
+                            equipment and facilities are limited.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="num">3</div>
+                    <div>
+                        <h3>Lack of recognition</h3>
+                        <p>
+                            Informal recycling workers help communities recover
+                            waste, yet their work is not always recognized or
+                            included in formal environmental programs.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <div class="quote">
+                A cleaner environment should not come at the expense of the
+                dignity and welfare of the people working to achieve it.
+            </div>
+
+            <p style="margin-top:24px">
+                Waste management should not depend only on the efforts of
+                informal workers. Government agencies, businesses, communities,
+                and consumers also have a responsibility to reduce waste,
+                improve collection systems, and provide better support for
+                those involved in recycling.
+            </p>
+
+            <p>
+                Recognizing waste pickers means treating them as people
+                contributing to environmental protection, not simply as
+                individuals earning from discarded materials.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="reflection">
+    <div class="wrap">
+
+        <div class="section-tag">03 · Suri-Nilay · Theological Reflection</div>
+
+        <h2>Respecting people is part of caring for creation.</h2>
+
+        <p class="lead">
+            Catholic Social Teaching and Lasallian values remind us that
+            environmental responsibility is connected to human dignity,
+            solidarity, and justice.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="emoji">🌍</div>
+                <h3>Care for creation</h3>
+                <p>
+                    Protecting the environment means being responsible for
+                    the resources entrusted to us. Reducing waste and reusing
+                    materials are ways of showing care for our shared home.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🫂</div>
+                <h3>Human dignity</h3>
+                <p>
+                    Every worker deserves respect, regardless of their
+                    occupation or economic situation. Waste pickers
+                    deserve safe conditions and recognition for their efforts.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🤝</div>
+                <h3>Solidarity</h3>
+                <p>
+                    Solidarity means standing with others and recognizing
+                    their struggles. Supporting waste workers is part of
+                    building a community where no one is ignored.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="reflection">
+            <h3>Reflection question</h3>
+            <p>
+                How can we practice ecological solidarity not only by reusing
+                materials, but also by respecting and supporting the people
+                who collect and recover them?
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="upcycle" id="action">
+    <div class="wrap">
+
+        <div class="section-tag">04 · Taya-Kilos</div>
+
+        <h2>Turning waste into opportunity</h2>
+
+        <p class="lead">
+            Upcycling can be a way to promote environmental awareness and
+            creativity while recognizing the knowledge of waste workers.
+            Community activities should respect their participation,
+            experience, and livelihood.
+        </p>
+
+        <div class="cards">
+
+            <article class="idea">
+                <div class="top">🪴</div>
+                <div class="body">
+                    <h3>Bottles into planters</h3>
+                    <p>
+                        Clean plastic bottles can be reused as plant containers
+                        for small gardens or greening projects.
+                    </p>
+                </div>
+            </article>
+
+            <article class="idea">
+                <div class="top">🧺</div>
+                <div class="body">
+                    <h3>Fabric into reusable bags</h3>
+                    <p>
+                        Old shirts and clean fabric scraps can be turned
+                        into reusable bags that help reduce single use plastics.
+                    </p>
+                </div>
+            </article>
+
+            <article class="idea">
+                <div class="top">📦</div>
+                <div class="body">
+                    <h3>Cardboard into organizers</h3>
+                    <p>
+                        Clean cardboard can be reused to create storage
+                        organizers, dividers, and other useful items.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="callout">
+            Upcycling is only one part of proper waste management.
+            Waste workers should not be expected to handle unsafe or
+            contaminated materials without appropriate protection.
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="wrap two-col">
+
+        <div>
+            <div class="section-tag">Community action</div>
+
+            <h2>How can we show solidarity?</h2>
+
+            <p class="lead">
+                Supporting waste workers goes beyond making recycled crafts.
+                It also means listening, recognizing their contribution,
+                and encouraging better conditions for their work.
+            </p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="num">1</div>
+                <div>
+                    <h3>Recognize their contribution</h3>
+                    <p>
+                        Raise awareness about how waste pickers help
+                        recover recyclable materials and support waste reduction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="num">2</div>
+                <div>
+                    <h3>Listen to their experiences</h3>
+                    <p>
+                        Give waste workers a chance to share their concerns,
+                        knowledge, and ideas when planning environmental activities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="num">3</div>
+                <div>
+                    <h3>Promote responsible upcycling</h3>
+                    <p>
+                        Reuse clean materials and avoid creating more waste
+                        through poorly planned projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="num">4</div>
+                <div>
+                    <h3>Support fair treatment</h3>
+                    <p>
+                        Encourage safer working conditions, fair opportunities,
+                        and community programs that include informal recyclers.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="sources">
+    <div class="wrap">
+
+        <div class="section-tag">Research and credits</div>
+
+        <h2>Sources and references</h2>
+
+        <p class="lead">
+            These references helped us understand waste management,
+            informal recycling, and environmental concerns in Tondo,
+            including the experiences of waste pickers.
+        </p>
+
+        <ul class="sources">
+
+            <li>
+                Calucin, D. (2025, August 2).
+                <em>2 men jailed for dumping trash on Road 10 in Tondo.</em>
+                Manila Bulletin.
+                <a href="https://mb.com.ph/2025/08/02/2-men-jailed-for-dumping-trash-on-road-10-in-tondo"
+                   target="_blank" rel="noopener">Read article</a>
+            </li>
+
+            <li>
+                Gutierrez, G. L. (2025, August 19).
+                <em>Crews collect 250 sacks of trash from Manila waterway.</em>
+                Philippine Information Agency.
+                <a href="https://pia.gov.ph/news/crews-collect-250-sacks-of-trash-from-manila-waterway/"
+                   target="_blank" rel="noopener">Read article</a>
+            </li>
+
+            <li>
+                Sicam, O. (2023).
+                <em>The production of space in the informal waste economy:
+                Waste picking in the Tondo Manila Bay Area.</em>
+                The Journal of Public Space.
+                <a href="https://doi.org/10.32891/jps.v8i1.1212"
+                   target="_blank" rel="noopener">Read study</a>
+            </li>
+
+            <li>
+                Reyes, M. A. (2025).
+                <em>Manila's Other City: Toward a Counter-Relocation Approach.</em>
+                University of Waterloo.
+                <a href="https://hdl.handle.net/10012/22657"
+                   target="_blank" rel="noopener">Read thesis</a>
+            </li>
+
+            <li>
+                McFarlane, C., et al. (2024).
+                <em>Density textures: The crowd, everyday life, and urban poverty in Manila.</em>
+                <a href="https://doi.org/10.1080/02723638.2024.2401715"
+                   target="_blank" rel="noopener">Read article</a>
+            </li>
+
+        </ul>
+
+    </div>
+</section>
+
+<section class="cta">
+    <div class="section-tag">Our call to action</div>
+
+    <h2>Recognize the people behind recycling.</h2>
+
+    <p>
+        A cleaner community begins not only with less waste,
+        but with respect for the people who help make it possible.
+        Let us practice ecological solidarity by caring for creation,
+        supporting waste workers, and working together toward a fairer environment.
+    </p>
+
+    <a class="btn" href="#issue">Learn more ↑</a>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+
+        <strong>HumaniCraft · CLVE 3 · Group 6</strong><br>
+        Ecological Solidarity through Upcycling<br><br>
+
+        <strong>Community studied:</strong> Barangay 105, Tondo, Manila
+
+        <div class="members">
+            <div class="member">Enriquez Kirko</div>
+            <div class="member">Enriquez Mirko</div>
+            <div class="member">Esico Troy</div>
+            <div class="member">Lapus Bing</div>
+            <div class="member">Mahiya Iano</div>
+            <div class="member">Balba Mitz</div>
+        </div>
+</footer>
+
+</body>
+</html>
